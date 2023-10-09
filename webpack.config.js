@@ -23,7 +23,7 @@ const config = {
 			},
 			{
 				test: /\.css$/,
-				use: ["style-loader", "css-loader"],
+				use: ["style-loader", "css-loader", "postcss-loader"],
 				exclude: /\.module\.css$/,
 			},
 			{
@@ -78,13 +78,13 @@ const config = {
 		new CopyPlugin({
 			patterns: [{ from: "public", to: "." }],
 		}),
-		new NodePolyfillPlugin(),
-		new WebpackObfuscator(
-			{
-				rotateStringArray: true,
-			},
-			["/node_modules/"]
-		),
+		// new NodePolyfillPlugin(),
+		// new WebpackObfuscator(
+		// 	{
+		// 		rotateStringArray: true,
+		// 	},
+		// 	["/node_modules/"]
+		// ),
 	],
 };
 
