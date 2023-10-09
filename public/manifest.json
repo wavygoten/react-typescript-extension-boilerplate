@@ -1,0 +1,32 @@
+{
+	"name": "react-typescript-extension-boilerplate",
+	"description": "",
+	"manifest_version": 2,
+	"version": "1.0.0",
+	"icons": {
+		"16": "./assets/Sharingan.png",
+		"48": "./assets/Sharingan.png",
+		"128": "./assets/Sharingan.png"
+	},
+	"browser_action": {
+		"default_icon": {
+			"16": "./assets/Sharingan.png",
+			"48": "./assets/Sharingan.png"
+		},
+		"default_popup": "popup.html"
+	},
+	"web_accessible_resources": [],
+	"permissions": ["tabs", "storage"],
+	"background": {
+		"scripts": ["./js/background.js"],
+		"persistent": true
+	},
+	"content_scripts": [
+		{
+			"matches": ["https://*.myworkdayjobs.com/*"],
+			"js": ["./js/content.js"],
+			"all_frames": true,
+			"run_at": "document_end"
+		}
+	]
+}
