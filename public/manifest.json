@@ -23,7 +23,7 @@
 	},
 	"content_scripts": [
 		{
-			"matches": [""],
+			"matches": ["https://www.google.com/"],
 			"js": ["./js/content.js"],
 			"all_frames": true,
 			"run_at": "document_end"
